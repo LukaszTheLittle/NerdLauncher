@@ -27,7 +27,7 @@ class NerdLauncherActivity : AppCompatActivity() {
         }
 
         val activities = packageManager.queryIntentActivities(startupIntent, 0)
-        activities.sortWith(Comparator { a, b ->
+        activities.sortWith({ a, b ->
             String.CASE_INSENSITIVE_ORDER.compare(
                 a.loadLabel(packageManager).toString(),
                 b.loadLabel(packageManager).toString()
